@@ -1,14 +1,21 @@
-if( location.href.includes('prendrerendezvous') ){
+// if( location.href.includes('prendrerendezvous') ){
     
-    document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_EmailChecked').checked = false;
-    document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_TextChecked').checked = true;
-    document.querySelector('#client_comment_CSTMT').checked = true;
-    document.querySelector('#userComments').disabled = false;
-    document.querySelector('#userComments').value = `CARS:\n${localStorage.getItem('s_patient_comment')}`;
-    document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_CellNumber').value = localStorage.getItem('s_patient_phone');
-    
-} else if ( location.href.includes('QuickSearch') ) {
+//     document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_EmailChecked').checked = false;
+//     document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_TextChecked').checked = true;
+//     document.querySelector('#client_comment_CSTMT').checked = true;
+//     document.querySelector('#userComments').disabled = false;
+//     document.querySelector('#userComments').value = `CARS:\n${localStorage.getItem('s_patient_comment')}`;
+//     document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_CellNumber').value = localStorage.getItem('s_patient_phone');
+//<div class="inline-block mr-20">
+//<label class="label-text">Numéro de téléphone</label>
+//<input id="s_patient_phone" maxlength="12" type="tel" class="phone input-box" spellcheck="false" data-ms-editor="true" data-mask="000 000-0000" autocomplete="off">
+//</div>
 
+//<div class="inline-block mr-20">
+//<label class="label-text">Commentaire</label>
+//<textarea id="s_patient_comment" style="width:25rem" class="input-box" spellcheck="false" autocomplete="off"></textarea>
+//</div>    
+// } else if ( location.href.includes('QuickSearch') ) {
 
 const procedureOctroiRDV = {
     '0-3' : {
@@ -66,16 +73,6 @@ function rdvEnHTML(patientAge){
     document.querySelector('.s_customElements')?.remove()
     document.querySelector('#ConsultingReasonSelector')?.insertAdjacentHTML(`afterend`, `
     <div class="s_customElements t">
-
-        <div class="inline-block mr-20">
-            <label class="label-text">Numéro de téléphone</label>
-            <input id="s_patient_phone" maxlength="12" type="tel" class="phone input-box" spellcheck="false" data-ms-editor="true" data-mask="000 000-0000" autocomplete="off">
-        </div>
-
-        <div class="inline-block mr-20">
-            <label class="label-text">Commentaire</label>
-            <textarea id="s_patient_comment" style="width:25rem" class="input-box" spellcheck="false" autocomplete="off"></textarea>
-        </div>
 
         <div class="inline-block">
             <label class="label-text">Code couleur</label>
@@ -369,4 +366,4 @@ document.querySelector('body').addEventListener('click', (event) => {
 });
 
 
-}
+// }
