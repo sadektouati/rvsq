@@ -195,7 +195,7 @@ function getAgeInMonths(theDate) {
     return totalMonths;
 }
 
-const rdvcliniques = function (_jsonResponse) {
+ redvCliniques = function (_jsonResponse) {
    
     const colorCode = localStorage.getItem('s_color_code');
 
@@ -306,7 +306,7 @@ const rdvcliniques = function (_jsonResponse) {
                 console.log(jsonResponse);
                  
 
-                 const modifiedResponseText = JSON.stringify(rdvcliniques(jsonResponse));
+                 const modifiedResponseText = JSON.stringify(redvCliniques(jsonResponse));
                  const patientAge = getAgeInMonths(patient.birthDate);
 
                  if(
@@ -367,5 +367,6 @@ document.querySelector('body').addEventListener('click', (event) => {
     }
    
 });
+
 
 }
