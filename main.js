@@ -195,7 +195,7 @@ function getAgeInMonths(theDate) {
     return totalMonths;
 }
 
- redvCliniques = function (_jsonResponse) {
+const rdvcliniques = function (_jsonResponse) {
    
     const colorCode = localStorage.getItem('s_color_code');
 
@@ -306,7 +306,7 @@ function getAgeInMonths(theDate) {
                 console.log(jsonResponse);
                  
 
-                 const modifiedResponseText = JSON.stringify(redvCliniques(jsonResponse));
+                 const modifiedResponseText = JSON.stringify(rdvcliniques(jsonResponse));
                  const patientAge = getAgeInMonths(patient.birthDate);
 
                  if(
@@ -368,159 +368,4 @@ document.querySelector('body').addEventListener('click', (event) => {
    
 });
 
-
 }
-
-// fetch("https://ccomtl-dv-drasmp-prod.crm3.dynamics.com/api/data/v9.0/lgt_ccis(071294f8-905b-4138-998d-3f359145d197)", {
-//     method: "PATCH",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Accept": "application/json",
-//       "If-Match": "*"
-//     },
-//     body: JSON.stringify({
-//       "lgt_idappelant": "2101458756",
-//       "lgt_nomdelaclinique": "this is a clinic name",
-//       "lgt_numerodetelephone": "4388333237"
-//     })
-//   }).then((response) => {
-//     return response.txt()
-//   }).then((resData) => {
-//     console.log('yes', resData);
-//   });
-
-
-[
-    {
-        "readOnly": false,
-        "consultingReasonTitle": "Réorientation – RV en clinique",
-        "consultingReasonDescription": "Réorientation – RV en clinique",
-        "wasDoctorNameHidden": false,
-        "isSheduledByProfile": 0,
-        "ownerId": 0,
-        "participantId": 0,
-        "reminderEmailStatus": "Unprocessed",
-        "reminderSMSStatus": "Unprocessed",
-        "reminderPhoneStatus": "Unprocessed",
-        "id": 568227646,
-        "companyId": 0,
-        "clientPresenceIndicator": "Undetermined",
-        "location": {
-            "cliniTimeZoneUtcOffset": -18000,
-            "id": 9574,
-            "label": "GMF-U du CLSC de Hochelaga-Maisonneuve",
-            "clscTerritory": "",
-            "acronyme": "",
-            "noEstablishment": "CLIN-FAMIL-CLSCHM",
-            "displayMode": 0,
-            "willNotifNonAttendance": false,
-            "anonymizeProfGMF": false,
-            "anonymizeProfGEN": false,
-            "isHeadOffice": false,
-            "idMachine": 0,
-            "address": {
-                "streetName": "4201 Rue Ontario E",
-                "unitNumber": "",
-                "city": "Montréal",
-                "country": "CA",
-                "stateOrProvince": "QC",
-                "postalCode": "H1V 1K2",
-                "latitude": "45,5514409",
-                "longitude": "-73,5410618"
-            },
-            "timeZone": "Eastern Time (US & Canada)",
-            "establishmentPhoneNumberCountryCode": "1",
-            "establishmentPhoneNumber": "(514) 253-2181",
-            "establishmentPhoneNumberWithExtension": "(514) 253-2181",
-            "latitude": "45,5514409",
-            "longitude": "-73,5410618",
-            "cancelLimit": 0,
-            "isSending3DayReminders": false,
-            "isScreeningCovid19": false,
-            "isTreatingCovid19": false,
-            "isMixedCovid19": false,
-            "allowNoNam": false,
-            "modePandemie": false
-        },
-        "companyClient": {
-            "userId": 0,
-            "isArchived": false,
-            "ramqNumber": "TOUS81011719",
-            "ramqExpDate": "2029-01-31",
-            "fipa": {
-                "userId": 0,
-                "ramqExpDate": "2029-01-31",
-                "id": 0,
-                "firstName": "SADDEK",
-                "lastName": "TOUATI",
-                "gender": 2,
-                "birthday": "1981-01-17",
-                "hasProfessionalAccount": false,
-                "hasValidGMFLicenseForCompany": false,
-                "readOnly": false,
-                "hasGrantedDataAccess": false,
-                "adUser": 0
-            },
-            "importingExistingClient": false,
-            "id": 0,
-            "cellNumber": "4388333237",
-            "culture": "Fr-CA",
-            "allowSMSReception": true,
-            "allowEmailReception": false,
-            "allowPhoneReception": false,
-            "hasProfessionalAccount": false,
-            "hasValidGMFLicenseForCompany": false,
-            "readOnly": false,
-            "hasGrantedDataAccess": false,
-            "adUser": 0
-        },
-        "user": {
-            "id": 14377669,
-            "fullName": "SADDEK TOUATI",
-            "companyId": 0,
-            "emailIsConfirmed": true,
-            "firstName": "SADDEK",
-            "lastName": "TOUATI",
-            "title": "",
-            "homeAddress": {
-                "country": "CA",
-                "stateOrProvince": "QC"
-            },
-            "homeNumberCountryCode": "1",
-            "cellNumberCountryCode": "1",
-            "cellNumber": "4388333237",
-            "culture": "Fr-CA",
-            "birthday": "1981-01-17",
-            "allowSMSReception": true,
-            "allowEmailReception": false,
-            "allowPhoneReception": false,
-            "hasProfessionalAccount": false,
-            "hasValidGMFLicenseForCompany": false,
-            "readOnly": false,
-            "hasGrantedDataAccess": false,
-            "adUser": 0
-        },
-        "professionalName": "******* *******",
-        "timeZone": "Eastern Time (US & Canada)",
-        "timeZoneAbbr": "Eastern Time (US & Canada)",
-        "date": "2024-09-03 14:00:00",
-        "dateUtc": "2024-09-03T18:00:00.000Z",
-        "duration": 15,
-        "isConfirmed": true,
-        "isDeclined": false,
-        "isRemoved": false,
-        "referenceNumber": "HYCJEQUA6ZYC",
-        "type": "",
-        "userComments": "",
-        "cancelLimit": 0,
-        "isDeleted": false,
-        "isPetalActivity": true,
-        "IsReminderSmsEnabled": true,
-        "IsReminderPhoneEnabled": true,
-        "categoryPetal": 0,
-        "availabilityInterfaceDeReoId": 0,
-        "IsTakenByReorienter": true,
-        "CanBeCancelled": true,
-        "professionalKind": "generic_doctor"
-    }
-]
