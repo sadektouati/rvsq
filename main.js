@@ -195,7 +195,7 @@ function getAgeInMonths(theDate) {
     return totalMonths;
 }
 
- redvCliniques = function (_jsonResponse) {
+function rdvcliniques(_jsonResponse) {
    
     const colorCode = localStorage.getItem('s_color_code');
 
@@ -306,7 +306,7 @@ function getAgeInMonths(theDate) {
                 console.log(jsonResponse);
                  
 
-                 const modifiedResponseText = JSON.stringify(redvCliniques(jsonResponse));
+                 const modifiedResponseText = JSON.stringify(rdvcliniques(jsonResponse));
                  const patientAge = getAgeInMonths(patient.birthDate);
 
                  if(
