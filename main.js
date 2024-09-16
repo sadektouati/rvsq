@@ -1,3 +1,15 @@
+if( location.href.includes('prendrerendezvous') ){
+    
+    document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_EmailChecked').checked = false;
+    document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_TextChecked').checked = true;
+    document.querySelector('#client_comment_CSTMT').checked = true;
+    document.querySelector('#userComments').disabled = false;
+    document.querySelector('#userComments').value = `CARS:\n${localStorage.getItem('s_patient_comment')}`;
+    document.querySelector('#ctl00_ContentPlaceHolderMP_ClientInformationForm1_ClientInfo_CellNumber').value = localStorage.getItem('s_patient_phone');
+    
+} else if ( location.href.includes('QuickSearch') ) {
+
+
 const procedureOctroiRDV = {
     '0-3' : {
                 orange : {min: 0, max: 24,   hors_delais: 24 },
@@ -15,7 +27,7 @@ const procedureOctroiRDV = {
                 vert :   {min: 48, max: 120, hors_delais: 144 },
             },
 
-    '61-1000' : {
+    '6-1000' : {
                 orange : {min: 0, max: 24,   hors_delais: 24 },
                 violet : {min: 0, max: 24,   hors_delais: 36 },
                 rose :   {min: 24, max: 36,  hors_delais: 48 },
@@ -25,25 +37,11 @@ const procedureOctroiRDV = {
 
 }
 
-
-document.querySelector('body').addEventListener('click', (event) => {
-    const eventTarget = event.target;
-   
-    if(eventTarget.closest('ul.h-QuickSearch-dropdown li')) {
-        const id = eventTarget.closest('ul li').getAttribute('id');
-        const patientsArray = JSON.parse(localStorage.getItem('s_patients_array'));
-
-        rdvEnHTML(getAgeInMonths(patientsArray[id]?.birthDate));
-       
-    }
-});
-
-
 function rdvEnHTML(patientAge){
 
  if( !document.querySelector('#ConsultingReasonSelector') ){ return;}
  
-    let ageInterval = '61-1000';
+    let ageInterval = '6-1000';
 
     if( patientAge <= 3 ) {
         ageInterval = '0-3';
@@ -125,7 +123,44 @@ function rdvEnHTML(patientAge){
     });
 
 }
+ 
+document.querySelector('head').insertAdjacentHTML('beforeend', `
+     <style>
 
+        .s_customElements{
+            min-width: 100%;
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+         .h-sectionClinique + .offset8{
+             position: sticky;
+             top: 0;
+         }
+         .row .h-sectionClinique.span8 {
+             height: initial;
+         }
+         
+         .s_redError {
+             color: red !important;
+             background: mistyrose;
+         }
+         .s_redWarning {
+             color: red !important;
+             background: mistyrose;
+             display: flex;
+             height: 3rem;
+             justify-content: center;
+             align-items: center;
+             margin: 0 1rem 1rem 1rem;
+         }
+         .s_redText {
+             color: #df0000;
+         }
+
+     </style>
+     `);
 
 let errorTemplate = `<h4 class="s_redWarning">{{errorText}}</h4>`;
 
@@ -320,6 +355,22 @@ function getAgeInMonths(theDate) {
  };
 
 
+document.querySelector('body').addEventListener('click', (event) => {
+    const eventTarget = event.target;
+   
+    if(eventTarget.closest('ul.h-QuickSearch-dropdown li')) {
+        const id = eventTarget.closest('ul li').getAttribute('id');
+        const patientsArray = JSON.parse(localStorage.getItem('s_patients_array'));
+
+        rdvEnHTML(getAgeInMonths(patientsArray[id].birthDate));
+       
+    }
+   
+});
+
+
+}
+
 // fetch("https://ccomtl-dv-drasmp-prod.crm3.dynamics.com/api/data/v9.0/lgt_ccis(071294f8-905b-4138-998d-3f359145d197)", {
 //     method: "PATCH",
 //     headers: {
@@ -338,140 +389,7 @@ function getAgeInMonths(theDate) {
 //     console.log('yes', resData);
 //   });
 
-// [
-//     {
-//         "readOnly": false,
-//         "consultingReasonTitle": "Réorientation – RV en clinique",
-//         "consultingReasonDescription": "Réorientation – RV en clinique",
-//         "wasDoctorNameHidden": false,
-//         "isSheduledByProfile": 0,
-//         "ownerId": 0,
-//         "participantId": 0,
-//         "reminderEmailStatus": "Unprocessed",
-//         "reminderSMSStatus": "Unprocessed",
-//         "reminderPhoneStatus": "Unprocessed",
-//         "id": 568227646,
-//         "companyId": 0,
-//         "clientPresenceIndicator": "Undetermined",
-//         "location": {
-//             "cliniTimeZoneUtcOffset": -18000,
-//             "id": 9574,
-//             "label": "GMF-U du CLSC de Hochelaga-Maisonneuve",
-//             "clscTerritory": "",
-//             "acronyme": "",
-//             "noEstablishment": "CLIN-FAMIL-CLSCHM",
-//             "displayMode": 0,
-//             "willNotifNonAttendance": false,
-//             "anonymizeProfGMF": false,
-//             "anonymizeProfGEN": false,
-//             "isHeadOffice": false,
-//             "idMachine": 0,
-//             "address": {
-//                 "streetName": "4201 Rue Ontario E",
-//                 "unitNumber": "",
-//                 "city": "Montréal",
-//                 "country": "CA",
-//                 "stateOrProvince": "QC",
-//                 "postalCode": "H1V 1K2",
-//                 "latitude": "45,5514409",
-//                 "longitude": "-73,5410618"
-//             },
-//             "timeZone": "Eastern Time (US & Canada)",
-//             "establishmentPhoneNumberCountryCode": "1",
-//             "establishmentPhoneNumber": "(514) 253-2181",
-//             "establishmentPhoneNumberWithExtension": "(514) 253-2181",
-//             "latitude": "45,5514409",
-//             "longitude": "-73,5410618",
-//             "cancelLimit": 0,
-//             "isSending3DayReminders": false,
-//             "isScreeningCovid19": false,
-//             "isTreatingCovid19": false,
-//             "isMixedCovid19": false,
-//             "allowNoNam": false,
-//             "modePandemie": false
-//         },
-//         "companyClient": {
-//             "userId": 0,
-//             "isArchived": false,
-//             "ramqNumber": "TOUS81011719",
-//             "ramqExpDate": "2029-01-31",
-//             "fipa": {
-//                 "userId": 0,
-//                 "ramqExpDate": "2029-01-31",
-//                 "id": 0,
-//                 "firstName": "SADDEK",
-//                 "lastName": "TOUATI",
-//                 "gender": 2,
-//                 "birthday": "1981-01-17",
-//                 "hasProfessionalAccount": false,
-//                 "hasValidGMFLicenseForCompany": false,
-//                 "readOnly": false,
-//                 "hasGrantedDataAccess": false,
-//                 "adUser": 0
-//             },
-//             "importingExistingClient": false,
-//             "id": 0,
-//             "cellNumber": "4388333237",
-//             "culture": "Fr-CA",
-//             "allowSMSReception": true,
-//             "allowEmailReception": false,
-//             "allowPhoneReception": false,
-//             "hasProfessionalAccount": false,
-//             "hasValidGMFLicenseForCompany": false,
-//             "readOnly": false,
-//             "hasGrantedDataAccess": false,
-//             "adUser": 0
-//         },
-//         "user": {
-//             "id": 14377669,
-//             "fullName": "SADDEK TOUATI",
-//             "companyId": 0,
-//             "emailIsConfirmed": true,
-//             "firstName": "SADDEK",
-//             "lastName": "TOUATI",
-//             "title": "",
-//             "homeAddress": {
-//                 "country": "CA",
-//                 "stateOrProvince": "QC"
-//             },
-//             "homeNumberCountryCode": "1",
-//             "cellNumberCountryCode": "1",
-//             "cellNumber": "4388333237",
-//             "culture": "Fr-CA",
-//             "birthday": "1981-01-17",
-//             "allowSMSReception": true,
-//             "allowEmailReception": false,
-//             "allowPhoneReception": false,
-//             "hasProfessionalAccount": false,
-//             "hasValidGMFLicenseForCompany": false,
-//             "readOnly": false,
-//             "hasGrantedDataAccess": false,
-//             "adUser": 0
-//         },
-//         "professionalName": "******* *******",
-//         "timeZone": "Eastern Time (US & Canada)",
-//         "timeZoneAbbr": "Eastern Time (US & Canada)",
-//         "date": "2024-09-03 14:00:00",
-//         "dateUtc": "2024-09-03T18:00:00.000Z",
-//         "duration": 15,
-//         "isConfirmed": true,
-//         "isDeclined": false,
-//         "isRemoved": false,
-//         "referenceNumber": "HYCJEQUA6ZYC",
-//         "type": "",
-//         "userComments": "",
-//         "cancelLimit": 0,
-//         "isDeleted": false,
-//         "isPetalActivity": true,
-//         "IsReminderSmsEnabled": true,
-//         "IsReminderPhoneEnabled": true,
-//         "categoryPetal": 0,
-//         "availabilityInterfaceDeReoId": 0,
-//         "IsTakenByReorienter": true,
-//         "CanBeCancelled": true,
-//         "professionalKind": "generic_doctor"
-//     }
-// ]
+
 [
     {
         "readOnly": false,
