@@ -156,6 +156,10 @@ document.querySelector('head').insertAdjacentHTML('beforeend', `
              color: #df0000;
          }
 
+         .h-QuickSearch .patient-infos{
+         cursor: pointer;
+         }
+
      </style>
      `);
 
@@ -346,13 +350,14 @@ function rdvcliniques(_jsonResponse) {
 
              }
          }
+
      });
 
      return originalSend.apply(this, arguments);
  };
 
 
-document.querySelector('body').addEventListener('click', (event) => {
+ document.querySelector('body').addEventListener('click', (event) => {
     const eventTarget = event.target;
    
     if(eventTarget.closest('ul.h-QuickSearch-dropdown li')) {
@@ -365,5 +370,19 @@ document.querySelector('body').addEventListener('click', (event) => {
    
 });
 
+
+document.querySelector('body').addEventListener('click', (event) => {
+    const eventTarget = event.target;
+   
+    if(eventTarget.closest('.h-QuickSearch .patient-infos')) {
+
+        navigator.clipboard.writeText(event.target.closest('.patient-infos').innerText)
+        .then(() => {
+        }).catch(err => {
+        });
+       
+    }
+   
+});
 
 // }
