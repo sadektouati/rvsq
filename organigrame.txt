@@ -92,27 +92,26 @@ ANALYSE FFOM:
 
 ANALYSE PESTEL
 
+(Technologique) L'intégration croissante des technologies de l'information à des risques accrus de cybersécurité, et cela nécessite une vigilance constante.
 
-(Technologique) L'intégration croissante des technologies de l'information expose également l'hôpital à des risques accrus de cybersécurité, nécessitant une vigilance constante pour protéger les données des patients.
+(Legal) L'hopital CHSM doit être conforme au reglementation environementale en terme de gestion des déchets médicaux.
 
-(Legal) La gestion des déchets médicaux est une responsabilité importante pour le CHSM, en raison des réglementations environnementales strictes. Cette gestion peut entraîner des coûts additionnels, mais elle est essentielle pour la conformité.
+(Economique/Politique) Le CHSM bénéficie du soutien financier du gouvernement offert aux hôpitaux publics.
 
-(P) Le CHSM bénéficie du soutien gouvernemental aux hôpitaux publics, sous forme de subventions et de ressources, qui est crucial pour son fonctionnement.
+(Legal) A cause du soutien financier du gouvernoment le CHSM est sous contraintes budgétaires et exigences de performance strictes, qui parfois limite sa flexibilité.
 
-(Legal) Le soutien gouvernemental (subventions et ressources) est assorti de contraintes budgétaires et d'exigences de performance strictes, qui peuvent parfois limiter la flexibilité de l'hôpital.
+(Sociauculturel) Le vieillissement de la population offre a l'hopital une opportunité d'expansion dans le domaine de soins a domicile.
 
-(Sociauculturel) Le vieillissement de la population est un facteur clé à considérer. Avec une augmentation du nombre de personnes âgées, la demande pour des services de réhabilitation et de soins à domicile ne cesse de croître. Cela offre au CHSM des opportunités d'expansion dans ces domaines.
+(Legal) Le gouvernement provincial et fédéral imposent des réglementations sanitaires et de sécurité, assurant la protection des patients et du personnel.
 
-(Legal) Le gouvernement provincial et fédéral imposent des réglementations sanitaires et de sécurité, assurant la protection des patients et du personnel, mais nécessitant également des ressources (temps et argent) pour se maintenir en conformité.
+(Legal) Le CHSM doit se conformer à des exigences légales strictes, notamment en matière de confidentialité des données, conformément à la legislation en vigure.
 
-(Legal) Le CHSM doit se conformer à des exigences légales strictes, notamment en matière de confidentialité des données, conformément à la Loi sur la protection des renseignements personnels en matière de santé.
+(Economique) Les fluctuations des coûts des soins de santé peuvent exercer une pression sur les budgets de l'hôpital.
 
-(Economique) Les fluctuations des coûts des soins de santé, notamment en ce qui concerne les fournitures médicales et les technologies, peuvent exercer une pression sur les budgets de l'hôpital. Le CHSM dépend largement de financements publics pour son budget de fonctionnement.
-
-(Sociauculturel) Les attentes des patients ont évolué. Mieux informés, ils exigent des soins de qualité supérieure et l'utilisation de technologies modernes, ce qui augmente la pression sur les ressources de l'hôpital.
+(Sociauculturel) Le patients de CHSM ont des attentes qui reflete leux conscience de l'avancé technologique. Ils exigent des soins modernes, ce qui augmente la pression sur les ressources de l'hôpital.
 
 (Technologique) Les avancées en télémédecine représentent une opportunité majeure pour le CHSM, permettant d'élargir l'accès aux soins, particulièrement pour les patients éloignés ou à mobilité réduite.
 
-(Ecologique) De plus, en adoptant des initiatives de durabilité, telles que l'efficacité énergétique et la réduction de l'empreinte carbone, l'hôpital peut non seulement réduire ses coûts à long terme mais aussi améliorer son image publique.
+(Ecologique/Sociauculturel) De plus, en adoptant des initiatives de durabilité, l'hôpital peut non seulement réduire ses coûts à long terme mais aussi améliorer son image publique.
 
 (Legal) Les obligations liées à l'obtention et au maintien d'accréditations augmentent les responsabilités administratives et les coûts, mais sont indispensables pour assurer la qualité des soins et la reconnaissance officielle de l'établissement.
