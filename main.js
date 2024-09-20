@@ -156,7 +156,7 @@ document.querySelector('head').insertAdjacentHTML('beforeend', `
              color: #df0000;
          }
 
-         .h-QuickSearch .patient-infos{
+         .h-QuickSearch .patient-infos, .bold.name{
          cursor: pointer;
          }
 
@@ -374,11 +374,12 @@ function rdvcliniques(_jsonResponse) {
 document.querySelector('body').addEventListener('click', (event) => {
     const eventTarget = event.target;
    
-    if(eventTarget.closest('.h-QuickSearch .patient-infos')) {
+    if(eventTarget.closest('.h-QuickSearch .patient-infos, .bold.name')) {
 
         navigator.clipboard.writeText(event.target.closest('.patient-infos').innerText)
         .then(() => {
         }).catch(err => {
+            alert("Failed to copy text: ", err);
         });
        
     }
