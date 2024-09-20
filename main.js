@@ -376,7 +376,7 @@ document.querySelector('body').addEventListener('click', (event) => {
    
     if(eventTarget.closest('.h-QuickSearch .patient-infos, .bold.name')) {
 
-        navigator.clipboard.writeText(event.target.closest('.patient-infos').innerText)
+        navigator.clipboard.writeText(event.target.closest('.patient-infos, .bold.name').innerText)
         .then(() => {
         }).catch(err => {
             alert("Failed to copy text: ", err);
